@@ -5,14 +5,14 @@ import random
 from math import exp
 from typing import List, Tuple
 
-X_1 = 2  # média da primeira gaussiana
+X_1 = -2  # média da primeira gaussiana
 SIGMA_1 = 0.2  # desvio padrão da primeira gaussiana
-X_2 = -2  # média da segunda gaussiana
+X_2 = 2  # média da segunda gaussiana
 SIGMA_2 = 0.2  # desvio padrão da segunda gaussiana
-P_1 = 2  # coeficiente da primeira equação paramétrica
-Q_1 = 3  # constante da primeira equação paramétrica
+P_1 = -2  # coeficiente da primeira equação paramétrica
+Q_1 = 0  # constante da primeira equação paramétrica
 P_2 = 2  # coeficiente da segunda equação paramétrica
-Q_2 = 3  # constante da segunda equação paramétrica
+Q_2 = 0  # constante da segunda equação paramétrica
 
 
 # equação paramétrica geral
@@ -268,7 +268,7 @@ def estimador(x: List[float], alpha: float, quant_epocas: int) -> Tuple[float, f
     # para cada época
     for index in range(quant_epocas):
         # obtendo pontos aleatórios da nossa população
-        pontos_aleatorios = random.sample(x, 100)
+        pontos_aleatorios = random.sample(x, len(x))
         # erro
         e = 0
         # para cada ponto faremos um ajuste
@@ -294,7 +294,7 @@ def estimador(x: List[float], alpha: float, quant_epocas: int) -> Tuple[float, f
             q_1 = ajuste_erro_q_1(q_1, alpha, y, y_d, w_1, w_2)
             q_2 = ajuste_erro_q_2(q_2, alpha, y, y_d, w_1, w_2)
         # ao final faremos o erro médio por década
-        erros.append(e / 100)
+        erros.append(e / quant_epocas)
     # ao final retornaremos os valores ajustados
     return x_1, sigma_1, x_2, sigma_2, p_1, q_1, p_2, q_2, erros
 

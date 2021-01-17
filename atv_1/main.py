@@ -57,7 +57,7 @@ def main():
     """Execução do algoritmo.
     """
     # executando o algoritmo
-    x = prepare_x(-2, 2, 0.01)
+    x = prepare_x(-5, 5, 0.1)
     alpha = 0.01
     epocas = 1000
     x_1, sigma_1, x_2, sigma_2, p_1, q_1, p_2, q_2, erros = estimador(x, alpha, epocas)
