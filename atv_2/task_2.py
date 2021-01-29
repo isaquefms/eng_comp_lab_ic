@@ -220,17 +220,17 @@ def task_3() -> None:
     X = numpy.asmatrix(X)
     y_sample = numpy.array(y_sample).reshape(len(y_sample), 1)
     # operando
-    first_factor = numpy.linalg.inv(numpy.matmul(X, X.T))
-    second_factor = numpy.matmul(first_factor, X)
-    theta = numpy.matmul(second_factor.T, y_sample)
+    first_factor = numpy.linalg.inv(numpy.matmul(X.T, X))
+    second_factor = numpy.matmul(first_factor, X.T)
+    theta = numpy.matmul(second_factor, y_sample)
     return theta
 
 
-print(task_3())
+thetas = task_3()
 # Exibindo o erro por época
 cost_values, theta_0, theta_1, theta_2 = sub_task_2_2(1000)
 print(theta_0, theta_1, theta_2)
-# # print(h_theta(theta_0, theta_1, theta_2, 0.131, -0.226))
+print(thetas[0][0], thetas[1][0], thetas[2][0])
 # epochs = [i for i in range(1, 1000+1)]
 # plt.plot(epochs, cost_values)
 # plt.title('Função custo em relação a quantidade de épocas. Alpha = 0.1')
