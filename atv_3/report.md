@@ -54,4 +54,4 @@ nas Questions anteriores. Desta forma, aumentando o parâmetro `max_iter` ao ini
 convergência do algoritmo.
 
 #### Question 5
-Após todos estes passos, basta agora avaliar o modelo treinado, calculando a sua acurácia. Visto que a acurácia é a quantidade de classificações corretas que um modelo classificou, iremos comparar a variável `y_predict` com o `y_test` obtendo assim a acurácia do modelo. Segundo o cálculo da acurácia obtivemos um total de 98% de acurácia com o modelo.
+Após todos estes passos, basta agora avaliar o modelo treinado, calculando a sua acurácia. Visto que a acurácia é a quantidade de classificações corretas que um modelo classificou, iremos comparar a variável `y_predict` com o `y_test` obtendo assim a acurácia do modelo. Segundo o cálculo da acurácia obtivemos um total de 98% de acurácia com o modelo. Esse valor mostra uma boa acertividade do modelo utilizado. Porém como temos até o momento apenas essa métrica, não sabemos ainda como este mesmo modelo se comportará com a generalização se mostrando assim um modelo robusto.
