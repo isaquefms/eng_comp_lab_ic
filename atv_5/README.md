@@ -9,3 +9,16 @@ Nessa parte do projeto foi possível realizar uma comparação entre os modelos 
 Na segunda parte do projeto houve a proposta da criação de um modelo de 2 camadas escondidas e 6 nós em cada camada, juntamente com uma variáção entre os parâmetros. Algo que causou certa surpresa foi o fato do modelo ter apresentado o melhor ajuste justamente com os primeiros parâmetros descritos na atividade. Demais `solvers` e `learning_rates` não apresentaram resultados satisfatórios estando todos abaixo da primeira configuração.
 
 É importante pontuar que após a geração 400 os resultados não demonstraram ganhos tão relevantes, de modo que poderíamos ter parado o algoritmo na geração 500.
+
+## Parte 3
+A parte três consiste na comparação e na tentativa de melhoria do modelo de classificação de números escritos. Mesmo o `modelo_1` e o `modelo_2` sendo diferentes podemos compará-los utilizando as métricas disponíveis como `perda` e `acurácia`. 
+
+Dentre os dois modelos, o `modelo_1` possui uma perda maior no treino, porém é composto por uma estrutura mais barata que gera uma acurária bem próxima do `modelo_2`. Com base neste parâmetro, o `modelo_1` parece mais atrativo.
+
+O comportamente da curva de treino e da curva de validação nos dois modelos apresenta um comportamento bem próximo. A partir de um determinado momento os dois modelos começam a apresentar um certo `overfitting` onde a curva de validação, após o seu mínimo, apresenta um acrécimo no decorrer das épocas. Embora o comportamento próximo, o valor da perda mínimo e o tempo de aqiusição do mesmo ainda irão determinar a qualidade de cada modelo.
+
+Em termos da acurácia, os gŕaficos possuem um comportamento próximo ao dos gráficos de perda, sendo a diferença o fato dos gráficos agora serem de curvas crescentes. Da mesma forma, através do gráfico de acurácia, podemos perceber que a partir de um determinado ponto não há mais ganho na validação, apresentando o mesmo `overfitting` citado no gráfico de perda.
+
+Dados os gráficos acreditamos que as métricas de acurácia acabam sendo mais significativas uma vez que demonstram, de maneira limitada, o ajuste de um modelo ao problema. Assim, essa métrica acaba sendo a mais significativa, na maioria das vezes, na seleção do modelo.
+
+Com os testes realizados, não conseguimos obter resultados relevatemente melhores.
